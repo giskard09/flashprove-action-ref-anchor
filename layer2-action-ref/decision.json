@@ -1,0 +1,24 @@
+{
+  "action_ref_version": "v1",
+  "agent_id": "rama-worked-example-agent",
+  "decided_at_utc": "2026-11-03T14:47:30.065943Z",
+  "decision": "proceed",
+  "digest_sha256": "fe612672c2351364e4769a79ef9333094fec0fb6001c78fda4c9f2cdba34cf22",
+  "flashprove_claim": {
+    "claim": "exact-match",
+    "id": "79a5a2bc7a469b40df73dedf40abeb740671e8ae8077738bd3743897aeb22183",
+    "status": 0,
+    "y": "yes"
+  },
+  "gate": {
+    "claim_y_is_yes": true,
+    "cp_verify_exit_status_zero": true,
+    "final_line_is_YES": true
+  },
+  "upstream_verification": {
+    "license": "Apache-2.0",
+    "note": "cited unmodified; this record does not alter or re-run FlashProve's own output",
+    "repo": "https://github.com/anthropics/FlashProve",
+    "system": "FlashProve"
+  }
+}

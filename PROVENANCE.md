@@ -41,15 +41,17 @@ exists because that gap is real, not asserted by us.
   line `YES`, and `y=yes`; refuses otherwise. `layer2-action-ref/decision.json` now holds the record
   from the real run above: `"decision": "proceed"`, digest
   `fe612672c2351364e4769a79ef9333094fec0fb6001c78fda4c9f2cdba34cf22`.
-- **Anchor (AnchorRegistry, action_ref digest): NOT YET executed.** As with every prior worked
-  example in this project, broadcasting a real transaction needs its own explicit confirmation
-  before execution — separate from the build/run permission above, not requested yet.
+- **Anchor (AnchorRegistry, action_ref digest): executed, Base mainnet.** Digest
+  `fe612672c2351364e4769a79ef9333094fec0fb6001c78fda4c9f2cdba34cf22` anchored via `giskard-signer`'s
+  `queue_anchor` (owner wallet key never left the vault) — tx
+  `0x297f3cf03d1cb2db543caf29bd848723b69537df287d9bba46a7b08ad91fcaff`, block `53466718`, Base
+  mainnet (chain 8453). Verified independently against public RPC (`eth_getTransactionReceipt` +
+  `eth_getTransactionByHash`, `mainnet.base.org`), not taken from the signer's own report: status
+  `0x1`, `to` is the AnchorRegistry contract (`0x49fEcA52bC634a9Ab773226D16619deC547794aa`), the
+  `Anchored` event's digest topic matches the anchored digest exactly byte-for-byte, `from` is the
+  owner wallet, `value` is `0x0` (permissionless anchor, no value moved).
 
 ## What remains before this can be called complete
 
-1. Explicit confirmation to broadcast the action_ref digest
-   (`fe612672c2351364e4769a79ef9333094fec0fb6001c78fda4c9f2cdba34cf22`) on-chain (Base mainnet, same
-   AnchorRegistry contract as prior worked examples), with the resulting tx hash verified
-   independently against public RPC before this file is updated to mark it complete.
-2. Decide and confirm the publication venue (separate thread, still open with the creador as of this
-   draft) before this repository is made public anywhere.
+1. Decide and confirm the publication venue (separate thread, still open with the creador as of this
+   draft) before this repository's existence or this anchor is mentioned anywhere outside it.
